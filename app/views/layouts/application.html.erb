@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title><%= "Address Book" + (" - " + yield(:title) unless yield(:title).blank?).to_s %></title>
+    <%= render 'layouts/rails_default' %>
+    <%= render 'layouts/ie' %>
+    <%= render 'layouts/bootstrap_head' %>
+  </head>
+
+  <body>
+  <%= render 'layouts/navbar' %>
+  <div class="container">
+    <%= render 'layouts/flash' %>
+    <%= yield %>
+  </div>
+  <%= render 'layouts/bootstrap_foot' %>
+  </body>
+</html>

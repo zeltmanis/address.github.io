@@ -1,0 +1,26 @@
+<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbar">
+    <div class="navbar-nav mr-auto">
+      <%= link_to root_path, class: "nav-item nav-link active", data: {test: 'home'} do %>
+          Home
+          <span class="sr-only">(current)</span>
+      <% end %>
+      <% if signed_in? %>
+          <%= link_to 'Addresses', addresses_path, class: 'nav-item nav-link', data: {test: 'addresses'} %>
+          <%= link_to 'Sign out', sign_out_path, method: :delete, class: 'nav-item nav-link', data: {test: 'sign-out'} %>
+      <% else %>
+          <%= link_to 'Sign in', sign_in_path, id: "sign-in", class: "nav-item nav-link", data: {test: 'sign-in'} %>
+      <% end %>
+    </div>
+
+    <div>
+      <% if signed_in? %>
+        <span class="navbar-text" data-test="current-user"><%= current_user.email %></span>
+      <% end %>
+    </div>
+  </div>
+</nav>

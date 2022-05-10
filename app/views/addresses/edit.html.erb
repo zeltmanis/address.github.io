@@ -1,0 +1,9 @@
+<h2>Editing Address</h2>
+
+<%= render 'form', address: @address %>
+
+<div class="row justify-content-center">
+<%= link_to 'Show', @address, data: {test: 'show'} %>
+  &nbsp; | &nbsp;
+<%= link_to 'List', addresses_path, data: {test: 'list'} %>
+</div>
